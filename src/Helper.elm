@@ -1,8 +1,8 @@
 module Main exposing (..)
 
-import Html exposing (Html, div, h1, h2, h3, h4, h5, h6, a, text)
+import Char exposing (isUpper)
+import Html exposing (Html, a, div, h1, h2, h3, h4, h5, h6, text)
 import Html.Attributes exposing (href)
-import Char
 
 
 joinWords : String -> String -> String
@@ -12,7 +12,7 @@ joinWords word1 word2 =
 
 isUpperChars : List Char -> List Bool
 isUpperChars list =
-    List.map Char.isUpper list
+    List.map isUpper list
 
 
 evalChars : List Char -> (Char -> Bool) -> List Bool
@@ -35,3 +35,11 @@ headers param =
 hyperlink : String -> String -> Html msg
 hyperlink url textValue =
     a [ href url ] [ text textValue ]
+
+
+main : Html msg
+main =
+    div []
+        [ headers "Elm Works!"
+        , hyperlink "https://elm-lang.org" "Go to Elm"
+        ]
