@@ -1,4 +1,4 @@
-module Main exposing (..)
+module Helper exposing (..)
 
 import Char exposing (isUpper)
 import Html exposing (Html, a, div, h1, h2, h3, h4, h5, h6, text)
